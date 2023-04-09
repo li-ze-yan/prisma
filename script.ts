@@ -3,36 +3,15 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 async function main() {
-  //   const user = await prisma.user.create({
-  //     data: {
-  //       name: "Alice",
-  //       email: "alice@prisma.io",
-  //     },
-  //   });
-  //   console.log(user);
-
-  //   const users = await prisma.user.findMany();
-  //   console.log(users);
-
-  const user = await prisma.user.create({
-    data: {
-      name: "Bob",
-      email: "bob@prisma.io",
-      posts: {
-        create: {
-          title: "Hello World",
-        },
-      },
-    },
-  });
-  console.log(user);
-
-  const usersWithPosts = await prisma.user.findMany({
-    include: {
-      posts: true,
-    },
-  });
-  console.dir(usersWithPosts, { depth: null });
+  // 创建一条数据
+  // const user = await prisma.users.create({
+  //   data: {
+  //     email: "lizeyan@gmail.com",
+  //     name: "Lize Yan",
+  //   },
+  // });
+  // console.log(user);
+  // 创建多条数据 sqlite当前不支持createMany()方法
 }
 
 main()
